@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -32,6 +33,6 @@ public class EventLog {
     private String requestUri;
 
     @Column(name = COLUMN_PREFIX + "request_timestamp", nullable = false)
-    private LocalDate requestTimestamp;
+    private LocalDateTime requestTimestamp;
 
 }
