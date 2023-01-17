@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Table(name = EventLog.TABLE_NAME)
 public class EventLog {
 
-    public static final String TABLE_NAME = "eventlogs";
+    public static final String TABLE_NAME = "events";
     public static final String COLUMN_PREFIX = "e_";
 
     @Id
