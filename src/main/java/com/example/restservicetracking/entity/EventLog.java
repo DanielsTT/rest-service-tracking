@@ -32,6 +32,9 @@ public class EventLog {
     @Column(name = COLUMN_PREFIX + "request_uri", nullable = false)
     private String requestUri;
 
+    @Column(name = COLUMN_PREFIX + "user", nullable = false)
+    private String user;
+
     @Column(name = COLUMN_PREFIX + "request_timestamp", nullable = false)
     private LocalDateTime requestTimestamp;
 
