@@ -14,17 +14,19 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class EventLogService {
+public class EventLogService implements EventLogCrud{
 
     private final EventLogRepository eventLogRepository;
     private final ModelMapper modelMapper;
 
+    @Override
     @Transactional
     public EventLogDto save(CreateEventLogDto createEventLogDto) {
         EventLog newEventLog = modelMapper.map(createEventLogDto, EventLog.class);
         return modelMapper.map(eventLogRepository.save(newEventLog), EventLogDto.class);
     }
 
+    @Override
     @Transactional
     public List<EventLogDto> getAllEventLogs() {
         return eventLogRepository.findAll().stream()
@@ -32,3 +34,4 @@ public class EventLogService {
                 .collect(Collectors.toList());
     }
 }
+
